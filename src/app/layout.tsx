@@ -17,13 +17,9 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <body className='container mx-auto bg-slate-700 text-slate-50'>
-        <header>
           <Header />
-        </header>
-        <footer>
+          {children}
           <Footer />
-        </footer>
-        {children}
       </body>
     </html>
   )
