@@ -1,17 +1,29 @@
+"use client"
+
 import Image from 'next/image'
 import ArticleList from './compornents/ArticleList'
 import { getAllArticles } from './blogAPI'
+import { useEffect } from 'react';
 
 export default async function Home() {
-  const articles = await getAllArticles();
+  // const articles = await getAllArticles();
   //console.log(articles)
   //nextjs13はデフォルトでサーバーサイドにレンダリングされるためコンソール上では見れない
   // ローカルであるターミナルで確認ができる
 
+  useEffect(() => {
+    const getAllBlogs = async () => {
+      const res = await fetch("http://localhost:3003/posts");
+      const articles = await res.json();
+      console.log(articles);
+    };
+    getAllBlogs()
+  },[]);
+  
   return (
     <div className='md:flex'>
       <section className="w-full md:w-2/3 flex flex-col items-center px-3">
-        <ArticleList articles={articles}/>
+        {/* <ArticleList articles={articles}/> */}
       </section>
       <aside className="w-full md:w-1/3 flex flex-col items-center px-3 md:pl-6">
         <div className="bg-white shadow-md rounded p-4 mb-6 mt-4">
