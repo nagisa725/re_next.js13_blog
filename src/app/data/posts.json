@@ -1,0 +1,17 @@
+{
+   "posts":[
+        {
+            "id":"next.js13-udemy",
+            "title":"テストですテストです",
+            "createdAt":"2024/01/14",
+            "constent":"これはテストですパスタじゃなくてトースト"
+        },
+        {
+            "id":"next.js13-json-server",
+            "title":"テストですテストです",
+            "createdAt":"2024/01/15",
+            "constent":"これはテストですパスタじゃなくてトーストいやいやカジノ"
+        }
+
+   ]
+}
