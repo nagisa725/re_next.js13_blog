@@ -1,4 +1,3 @@
-import { resolve } from "path";
 import {Article} from "./types"
 
 export const getAllArticles = async () : Promise<Article[]> => {

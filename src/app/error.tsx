@@ -5,7 +5,7 @@ import React from 'react'
 const  Error = ({reset}:{reset:()=>void}) => {
   // reset もう一度試す を押した時ページがリフレッシュする typescript
   return (
-    <div className='bg-red-100 border-1-4 border-red-500 text-red-700 mt-4 rounded shadow-md mx-auto p-2'>
+    <div className='bg-red-100 border-l-4 border-red-500 text-red-700 mt-4 rounded shadow-md mx-auto p-2'>
       <h3 className='font-bold md-2'>
         エラーが発生しました
       </h3>
