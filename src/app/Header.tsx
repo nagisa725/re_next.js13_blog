@@ -5,7 +5,7 @@ const Header = () => {
   return (
     <header className='py-5 px-10 border-b flex justify-between items-center' >
         <div>
-            <h1 className='text-2x1 font-extrabold'>
+            <h1 className='text-2xl font-extrabold'>
                 <Link href="/">Next.js13 Blog</Link>
             </h1>
         </div>
