@@ -1,3 +1,4 @@
+import { resolve } from "path";
 import {Article} from "./types"
 
 export const getAllArticles = async () : Promise<Article[]> => {
@@ -7,6 +8,8 @@ export const getAllArticles = async () : Promise<Article[]> => {
         if(!res.ok){
             throw new Error("エラーが発生しました");
         }
+        await new Promise((resolve) => setTimeout(resolve,1500));
+
 
         const articles  = await res.json();
         //resという変数は文字列もしくはオブジェクトで存在しているためJSON形式にシリアライズ(文字列化)する必要がある
