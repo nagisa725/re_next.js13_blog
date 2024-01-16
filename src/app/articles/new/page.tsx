@@ -3,7 +3,7 @@ import React from 'react'
 const  CreatBlogPage= () => {
   return (
     <div className='min-h-screen py-8 px-4 md:px-12'>
-      <h2 className='text-2x1 font-bold mb-4'>ブログ新規作成</h2>
+      <h2 className='text-2xl font-bold mb-4'>ブログ新規作成</h2>
 
         {/* formタグ 入力・送信フォームを作成する際に使用する要素
         <form>タグがひとつのフォームとなり、フォームの中に<input>タグ、<select>タグ、<textarea>タグなどのフォーム部品を配置してフォームを作ります*/}

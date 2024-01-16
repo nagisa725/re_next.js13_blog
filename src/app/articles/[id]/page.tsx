@@ -2,7 +2,7 @@ import React from 'react'
 import Image from 'next/image'
 
 const Article = ({params}:{params:{id: string }}) => {
-
+    console.log(params.id)
   return (
     <div className='max-w-3xl mx-auto p-5'>Article
         <Image 
