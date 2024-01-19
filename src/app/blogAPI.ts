@@ -49,3 +49,38 @@ export const getDetailArticle = async (id: string): Promise<Article> => {
   return article;
   //  →一つの記事の詳細(単数)を取り込むので単数形に書き換えた
 };
+
+//新規記事を投稿するためのAPIを作成
+export const createArticle = async (
+  id: string,
+  title: string,
+  content: string
+): Promise<Article> => {
+  /*<Article[]>
+  →一つの記事の投稿(単数)を取り込むので配列[]はつけない
+  投稿する際に必要な型であるid,title,contentのtypeを定義*/
+
+  const currentDatetime = new Date().toISOString();
+  //↑現在の日時が取得できる
+
+  const res = await fetch(`http://localhost:3003/posts/`, {
+    method: "POST", //引数には投稿を意味するPOSTをmethodに指定
+    headers: {
+      "Content-Type": "application/json", //json形式で指定
+    },
+    //何を送信(リクエスト)して保存するのか,それをjson形式で含める → URLの情報、ブログのタイトル、本文内容
+    body: JSON.stringify({ id, title, content, createdAt: currentDatetime }), //createdAt:currentDatetime 投稿日時も同時に保存,投稿ができる
+  });
+
+  if (!res.ok) {
+    throw new Error("エラーが発生しました");
+  }
+
+  await new Promise((resolve) => setTimeout(resolve, 1000));
+  //ページ表示までの遅延指定、複数記事をルートディレクトリに表示させる際にしたものと同じ 今回は1秒
+
+  const newArticle = await res.json();
+  //resという変数は文字列もしくはオブジェクトで存在しているためJSON形式にシリアライズ(文字列化)する必要がある
+  return newArticle;
+  //  →一つの記事の詳細(単数)を取り込むので単数形に書き換えた
+};
