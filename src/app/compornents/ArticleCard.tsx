@@ -36,9 +36,9 @@ const ArticleCard = ({ article }: ArticleListProps) => {
           published on {article.createdAt}
         </p>
         <Link href={`articles/${article.id}`} className="text-slate-900 pb-6">
-          {article.constent.length > 70
-            ? article.constent.substring(0, 70) + "..."
-            : article.constent}
+          {article.content.length > 70
+            ? article.content.substring(0, 70) + "..."
+            : article.content}
           {/* 文字数制限を設けるため長さを表す length を指定し三項演算子を使う
         ? ○○ : ×× / ○○ → trueのとき...を表す 今回だと article.constent.substring(0,70) = article.constent.(本文部分が)70文字以上のときsubstring(0,70)(0~70文字のみ表示する)+ ...を最後に追加という意味
         ? ○○ : ×× / ×× → falseのとき...を表す 今回だと : article.constent = そのまま表示するという意味

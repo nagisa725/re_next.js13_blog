@@ -22,7 +22,7 @@ const Article = async ({ params }: { params: { id: string } }) => {
         posts.jsonで定義したtitleを第二引数に入れる */}
       </h1>
       <div className="text-lg leading-relaxed text-justify">
-        <p>{detailArticle.constent}</p>
+        <p>{detailArticle.content}</p>
         {/* 上と同義 */}
       </div>
     </div>
